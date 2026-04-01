@@ -55,6 +55,82 @@
   --radius: 20px;
 }
 
+// ─── Sunset Theme ────────────────────────────────────────────────
+[data-theme="sunset"] {
+  --primary: #f97316;
+  --primary-dark: #ea580c;
+  --primary-light: #fb923c;
+  --secondary: #ec4899;
+  --accent: #facc15;
+  --green: #34d399;
+  --bg: #0f0a0a;
+  --bg-card: #1a1010;
+  --bg-card-hover: #221616;
+  --text: #fef3c7;
+  --text-muted: #d97706;
+  --border: #3d2020;
+  --gradient: linear-gradient(135deg, #f97316, #ec4899);
+  --shadow: 0 4px 24px rgba(249, 115, 22, 0.2);
+  --radius: 12px;
+}
+
+// ─── Ocean Theme ─────────────────────────────────────────────────
+[data-theme="ocean"] {
+  --primary: #06b6d4;
+  --primary-dark: #0891b2;
+  --primary-light: #22d3ee;
+  --secondary: #6366f1;
+  --accent: #f59e0b;
+  --green: #10b981;
+  --bg: #020d18;
+  --bg-card: #051828;
+  --bg-card-hover: #0a2038;
+  --text: #e0f2fe;
+  --text-muted: #7dd3fc;
+  --border: #0c3251;
+  --gradient: linear-gradient(135deg, #06b6d4, #6366f1);
+  --shadow: 0 4px 24px rgba(6, 182, 212, 0.2);
+  --radius: 12px;
+}
+
+// ─── Forest Theme ────────────────────────────────────────────────
+[data-theme="forest"] {
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --primary-light: #4ade80;
+  --secondary: #84cc16;
+  --accent: #f59e0b;
+  --green: #34d399;
+  --bg: #050f08;
+  --bg-card: #0a1f10;
+  --bg-card-hover: #112918;
+  --text: #dcfce7;
+  --text-muted: #86efac;
+  --border: #14532d;
+  --gradient: linear-gradient(135deg, #22c55e, #84cc16);
+  --shadow: 0 4px 24px rgba(34, 197, 94, 0.2);
+  --radius: 12px;
+}
+
+// ─── Cyberpunk Theme ─────────────────────────────────────────────
+[data-theme="cyberpunk"] {
+  --primary: #f0e040;
+  --primary-dark: #ca8a04;
+  --primary-light: #fde047;
+  --secondary: #e879f9;
+  --accent: #00ffff;
+  --green: #00ffaa;
+  --bg: #000000;
+  --bg-card: #0a0a0f;
+  --bg-card-hover: #14141f;
+  --text: #ffffff;
+  --text-muted: #a0a0c0;
+  --border: #2a2a4a;
+  --gradient: linear-gradient(135deg, #f0e040, #e879f9);
+  --shadow: 0 4px 24px rgba(240, 224, 64, 0.25);
+  --radius: 4px;
+}
+
 // ─── SCSS aliases (so existing code keeps working) ────────────────
 $primary: var(--primary);
 $primary-dark: var(--primary-dark);

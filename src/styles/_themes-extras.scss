@@ -2,15 +2,22 @@
 
 // ── SaaS Theme ───────────────────────────────────────────────────
 [data-theme="saas"] {
-  .orb1, .orb2 { display: none; }
+  .orb1,
+  .orb2 {
+    display: none;
+  }
 
-  ::-webkit-scrollbar-thumb { background: #0070f3; }
+  ::-webkit-scrollbar-thumb {
+    background: #0070f3;
+  }
 
   .skills-section,
   .experience-section,
   .projects-section,
   .contact-section,
-  .footer { background: #000; }
+  .footer {
+    background: #000;
+  }
 }
 
 // ── Glass / iOS Theme ─────────────────────────────────────────────
@@ -18,13 +25,27 @@
   // Mesh gradient background
   body {
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(167, 139, 250, 0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
-      radial-gradient(ellipse at 60% 90%, rgba(251, 146, 60, 0.08) 0%, transparent 60%),
+      radial-gradient(
+        ellipse at 20% 50%,
+        rgba(167, 139, 250, 0.15) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        rgba(56, 189, 248, 0.12) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at 60% 90%,
+        rgba(251, 146, 60, 0.08) 0%,
+        transparent 60%
+      ),
       #0d0d1a;
   }
 
-  ::-webkit-scrollbar-thumb { background: #a78bfa; }
+  ::-webkit-scrollbar-thumb {
+    background: #a78bfa;
+  }
 
   // Navbar glass
   .navbar.scrolled {
@@ -49,7 +70,9 @@
     -webkit-backdrop-filter: blur(16px);
     background: rgba(255, 255, 255, 0.04) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .exp-card:hover,
@@ -60,7 +83,9 @@
   .contact-item:hover {
     background: rgba(255, 255, 255, 0.08) !important;
     border-color: rgba(167, 139, 250, 0.3) !important;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
 
   // Hero stats card
@@ -92,7 +117,9 @@
   .btn-primary {
     background: rgba(167, 139, 250, 0.9) !important;
     backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+    box-shadow:
+      0 4px 15px rgba(167, 139, 250, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
     &:hover {
       background: rgba(196, 181, 253, 0.95) !important;
       box-shadow: 0 8px 25px rgba(167, 139, 250, 0.55) !important;
@@ -133,7 +160,9 @@
 
   .filter-tab.active {
     background: rgba(167, 139, 250, 0.85) !important;
-    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+    box-shadow:
+      0 4px 15px rgba(167, 139, 250, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
   }
 
   // Contact form col
@@ -171,11 +200,98 @@
   .skills-section,
   .experience-section,
   .projects-section,
-  .contact-section { background: transparent; }
+  .contact-section {
+    background: transparent;
+  }
 
   .footer {
     background: rgba(13, 13, 26, 0.8);
     backdrop-filter: blur(20px);
     border-top-color: rgba(255, 255, 255, 0.08) !important;
   }
+}
+
+// ── Sunset Theme ─────────────────────────────────────────────────
+[data-theme="sunset"] {
+  ::-webkit-scrollbar-thumb { background: #f97316; }
+
+  body {
+    background:
+      radial-gradient(ellipse at 10% 80%, rgba(249, 115, 22, 0.2) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 55%),
+      #0f0a0a;
+  }
+
+  .orb1 { background: #f97316; opacity: 0.25; }
+  .orb2 { background: #ec4899; opacity: 0.2; }
+
+  .skills-section, .experience-section,
+  .projects-section, .contact-section { background: transparent; }
+  .footer { background: rgba(15, 10, 10, 0.95); border-top-color: #3d2020 !important; }
+}
+
+// ── Ocean Theme ──────────────────────────────────────────────────
+[data-theme="ocean"] {
+  ::-webkit-scrollbar-thumb { background: #06b6d4; }
+
+  body {
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(6, 182, 212, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 60%),
+      #020d18;
+  }
+
+  .orb1 { background: #06b6d4; opacity: 0.22; }
+  .orb2 { background: #6366f1; opacity: 0.18; }
+
+  .skills-section, .experience-section,
+  .projects-section, .contact-section { background: transparent; }
+  .footer { background: rgba(2, 13, 24, 0.95); border-top-color: #0c3251 !important; }
+}
+
+// ── Forest Theme ─────────────────────────────────────────────────
+[data-theme="forest"] {
+  ::-webkit-scrollbar-thumb { background: #22c55e; }
+
+  body {
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(34, 197, 94, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 25%, rgba(132, 204, 22, 0.1) 0%, transparent 55%),
+      #050f08;
+  }
+
+  .orb1 { background: #22c55e; opacity: 0.2; }
+  .orb2 { background: #84cc16; opacity: 0.18; }
+
+  .skills-section, .experience-section,
+  .projects-section, .contact-section { background: transparent; }
+  .footer { background: rgba(5, 15, 8, 0.95); border-top-color: #14532d !important; }
+}
+
+// ── Cyberpunk Theme ──────────────────────────────────────────────
+[data-theme="cyberpunk"] {
+  ::-webkit-scrollbar-thumb { background: #f0e040; }
+
+  body {
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(240, 224, 64, 0.015) 2px, rgba(240, 224, 64, 0.015) 4px),
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(232, 121, 249, 0.01) 2px, rgba(232, 121, 249, 0.01) 4px),
+      #000;
+  }
+
+  .orb1 { background: #f0e040; opacity: 0.15; filter: blur(60px); }
+  .orb2 { background: #e879f9; opacity: 0.12; filter: blur(60px); }
+
+  // Neon border glow on cards
+  .exp-card:hover, .skill-card:hover, .project-card:hover, .edu-card:hover {
+    border-color: #f0e040 !important;
+    box-shadow: 0 0 20px rgba(240, 224, 64, 0.2), 0 0 40px rgba(240, 224, 64, 0.08) !important;
+  }
+
+  // Neon text for active/highlight states
+  .nav-link.active, .nav-link:hover { text-shadow: 0 0 8px rgba(240, 224, 64, 0.6); }
+
+  .skills-section, .experience-section,
+  .projects-section, .contact-section { background: transparent; }
+  .footer { background: rgba(0, 0, 0, 0.98); border-top-color: #2a2a4a !important; }
 }
