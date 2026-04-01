@@ -13,7 +13,9 @@ const CONTACT_ITEMS = [
     icon: "📧",
     label: "Email",
     value: "unmesh1jathar@gmail.com",
-    href: /Mobi|Android/i.test(typeof navigator !== 'undefined' ? navigator.userAgent : '')
+    href: /Mobi|Android/i.test(
+      typeof navigator !== "undefined" ? navigator.userAgent : "",
+    )
       ? "mailto:unmesh1jathar@gmail.com"
       : "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
   },

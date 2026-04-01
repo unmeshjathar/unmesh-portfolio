@@ -116,7 +116,15 @@ export default function Hero() {
             href="mailto:unmesh1jathar@gmail.com"
             target="_blank"
             rel="noreferrer"
-            onClick={(e) => { if (!/Mobi|Android/i.test(navigator.userAgent)) { e.preventDefault(); window.open('https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com', '_blank'); } }}
+            onClick={(e) => {
+              if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                e.preventDefault();
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
+                  "_blank",
+                );
+              }
+            }}
             className="btn btn-ghost"
           >
             <svg
