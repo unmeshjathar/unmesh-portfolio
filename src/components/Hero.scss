@@ -1,0 +1,304 @@
+@use "../styles/variables" as *;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.22;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 500px;
+  height: 500px;
+  background: $primary;
+  top: -100px;
+  right: -100px;
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  background: $secondary;
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -4s;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba($primary, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($primary, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-15px, 15px) scale(0.97);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba($green, 0.12);
+  border: 1px solid rgba($green, 0.3);
+  border-radius: 100px;
+  color: $green;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background: $green;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.hero-heading {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.hero-name {
+  @include gradient-text;
+}
+
+.hero-role {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 600;
+  min-height: 2.2rem;
+}
+
+.role-prefix {
+  color: $text-muted;
+}
+
+.role-text {
+  color: $primary-light;
+  font-family: "Fira Code", monospace;
+}
+
+.cursor {
+  animation: blink 1s step-start infinite;
+  color: $primary;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-desc {
+  max-width: 600px;
+  font-size: 1.05rem;
+  color: $text-muted;
+  line-height: 1.75;
+  strong {
+    color: $primary-light;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $border;
+  border-radius: $radius;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-num {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  @include gradient-text;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: $text-muted;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: $border;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  @include flex-center;
+  border-radius: 8px;
+  border: 1px solid $border;
+  color: $text-muted;
+  transition: $transition;
+
+  &:hover {
+    color: $primary-light;
+    border-color: $primary;
+    background: rgba($primary, 0.1);
+    transform: translateY(-3px);
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: $text-muted;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeUp 1s ease 0.6s both;
+  z-index: 1;
+}
+
+.scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid $text-muted;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  background: $primary;
+  border-radius: 2px;
+  animation: scrollWheel 2s ease infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-stats {
+    gap: 14px;
+    padding: 14px 18px;
+  }
+  .stat-num {
+    font-size: 1.3rem;
+  }
+  .stat-divider {
+    height: 30px;
+  }
+  .scroll-indicator {
+    display: none;
+  }
+}

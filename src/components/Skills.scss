@@ -1,0 +1,162 @@
+@use "../styles/variables" as *;
+
+.skills-section {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba($primary, 0.03) 50%,
+    transparent 100%
+  );
+}
+
+.skills-wrapper {
+  @include fade-up;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.skill-card {
+  @include card;
+  padding: 28px;
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+}
+
+.skill-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $text;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.skill-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: $text;
+}
+
+.skill-pct {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: $primary-light;
+  font-family: "Fira Code", monospace;
+}
+
+.skill-bar-bg {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: $gradient;
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 3px;
+  }
+}
+
+// Tech cloud
+.tech-cloud {
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 32px;
+}
+
+.tech-cloud-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: default;
+  transition: $transition;
+
+  &:hover {
+    border-color: var(--tech-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    .tech-name {
+      color: $text;
+    }
+  }
+}
+
+.tech-symbol {
+  font-size: 0.95rem;
+  color: var(--tech-color);
+  font-weight: 700;
+  font-family: "Fira Code", monospace;
+  min-width: 20px;
+  text-align: center;
+}
+
+.tech-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $text-muted;
+  transition: $transition;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

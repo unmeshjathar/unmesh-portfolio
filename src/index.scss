@@ -1,0 +1,118 @@
+@use "./styles/variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: $bg;
+  color: $text;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 12px;
+  @include gradient-text;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $text-muted;
+  font-size: 1.05rem;
+  margin-bottom: 60px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+  border: none;
+  font-family: "Inter", sans-serif;
+
+  &-primary {
+    background: $gradient;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba($primary, 0.4);
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba($primary, 0.55);
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    color: $primary-light;
+    border: 2px solid $primary;
+    &:hover {
+      background: $primary;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+
+  &-ghost {
+    background: transparent;
+    color: $text-muted;
+    border: 1px solid $border;
+    &:hover {
+      color: $text;
+      border-color: $primary;
+      background: rgba($primary, 0.05);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: $bg;
+}
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 3px;
+}

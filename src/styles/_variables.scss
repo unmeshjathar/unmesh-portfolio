@@ -1,0 +1,58 @@
+// ─── Design Tokens ───────────────────────────────────────────────
+$primary: #6366f1;
+$primary-dark: #4f46e5;
+$primary-light: #818cf8;
+$secondary: #06b6d4;
+$accent: #f59e0b;
+$green: #10b981;
+
+$bg: #0f0f13;
+$bg-card: #1a1a24;
+$bg-card-hover: #222232;
+$text: #e2e8f0;
+$text-muted: #94a3b8;
+$border: #2d2d3f;
+
+$gradient: linear-gradient(135deg, $primary, $secondary);
+$shadow: 0 4px 24px rgba($primary, 0.15);
+$radius: 12px;
+$transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ─── Mixins ──────────────────────────────────────────────────────
+@mixin gradient-text {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin card {
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius;
+  transition: $transition;
+  &:hover {
+    background: $bg-card-hover;
+    border-color: rgba($primary, 0.3);
+    transform: translateY(-4px);
+    box-shadow: $shadow;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fade-up($delay: 0s) {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease $delay,
+    transform 0.7s ease $delay;
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
