@@ -130,14 +130,14 @@
     right: 0;
     bottom: 0;
     width: 260px;
-    background: $bg-card;
+    background: #0d0d1a;
     flex-direction: column;
     align-items: flex-start;
     padding: 80px 24px 24px;
     gap: 8px;
     transform: translateX(100%);
     transition: transform $transition;
-    border-left: 1px solid $border;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
 
     &.open {
       transform: translateX(0);
