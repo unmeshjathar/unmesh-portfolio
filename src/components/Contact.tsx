@@ -13,7 +13,9 @@ const CONTACT_ITEMS = [
     icon: "📧",
     label: "Email",
     value: "unmesh1jathar@gmail.com",
-    href: "mailto:unmesh1jathar@gmail.com",
+    href: /Mobi|Android/i.test(typeof navigator !== 'undefined' ? navigator.userAgent : '')
+      ? "mailto:unmesh1jathar@gmail.com"
+      : "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
   },
   {
     icon: "",
@@ -62,10 +64,11 @@ export default function Contact() {
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
     );
     const subject = encodeURIComponent(form.subject);
-    window.open(
-      `mailto:unmesh1jathar@gmail.com?subject=${subject}&body=${body}`,
-      "_blank",
-    );
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    const url = isMobile
+      ? `mailto:unmesh1jathar@gmail.com?subject=${subject}&body=${body}`
+      : `https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com&su=${subject}&body=${body}`;
+    window.open(url, "_blank");
     setStatus("success");
     setForm({ name: "", email: "", subject: "", message: "" });
     setTimeout(() => setStatus("idle"), 5000);

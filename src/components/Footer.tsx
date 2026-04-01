@@ -39,6 +39,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:unmesh1jathar@gmail.com"
+                onClick={(e) => { if (!/Mobi|Android/i.test(navigator.userAgent)) { e.preventDefault(); window.open('https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com', '_blank'); } }}
                 className="social-link"
                 aria-label="Email"
               >
