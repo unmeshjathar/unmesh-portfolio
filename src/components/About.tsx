@@ -42,7 +42,11 @@ export default function About() {
         <div className="about-grid" ref={ref}>
           <div className="about-image-wrap">
             <div className="about-avatar">
-              <img src="/img/unmeshprofilepic.jpeg" alt="Unmesh Jathar" className="avatar-img" />
+              <img
+                src="/img/unmeshprofilepic.jpeg"
+                alt="Unmesh Jathar"
+                className="avatar-img"
+              />
               <div className="avatar-ring" />
             </div>
             <div className="about-exp-badge">

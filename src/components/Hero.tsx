@@ -112,7 +112,12 @@ export default function Hero() {
           >
             Get In Touch
           </button>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com" target="_blank" rel="noreferrer" className="btn btn-ghost">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-ghost"
+          >
             <svg
               width="16"
               height="16"

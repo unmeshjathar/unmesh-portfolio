@@ -59,12 +59,12 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
     );
     const subject = encodeURIComponent(form.subject);
     window.open(
       `https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com&su=${subject}&body=${body}`,
-      "_blank"
+      "_blank",
     );
     setStatus("success");
     setForm({ name: "", email: "", subject: "", message: "" });
@@ -128,7 +128,11 @@ export default function Contact() {
           </div>
 
           <div className="contact-form-col">
-            <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
+            <form
+              className="contact-form"
+              ref={formRef}
+              onSubmit={handleSubmit}
+            >
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Your Name</label>
