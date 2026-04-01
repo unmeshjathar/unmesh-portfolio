@@ -11,16 +11,17 @@ const LINKS = [
 ] as const;
 type NavLink = (typeof LINKS)[number];
 
-type Theme = "default" | "saas" | "glass" | "sunset" | "ocean" | "forest" | "cyberpunk";
+type Theme = "default" | "saas" | "glass" | "sunset" | "ocean" | "forest" | "cyberpunk" | "ios26";
 
 const THEMES: { id: Theme; label: string; dot: string }[] = [
-  { id: "default",   label: "Default",   dot: "#6366f1" },
-  { id: "saas",      label: "SaaS",      dot: "#0070f3" },
-  { id: "glass",     label: "Glass",     dot: "#a78bfa" },
-  { id: "sunset",    label: "Sunset",    dot: "#f97316" },
-  { id: "ocean",     label: "Ocean",     dot: "#06b6d4" },
-  { id: "forest",    label: "Forest",    dot: "#22c55e" },
-  { id: "cyberpunk", label: "Cyberpunk", dot: "#f0e040" },
+  { id: "default",   label: "Default",    dot: "#6366f1" },
+  { id: "saas",      label: "SaaS",       dot: "#0070f3" },
+  { id: "glass",     label: "Glass",      dot: "#a78bfa" },
+  { id: "ios26",     label: "iOS 26",     dot: "#007aff" },
+  { id: "sunset",    label: "Sunset",     dot: "#f97316" },
+  { id: "ocean",     label: "Ocean",      dot: "#06b6d4" },
+  { id: "forest",    label: "Forest",     dot: "#22c55e" },
+  { id: "cyberpunk", label: "Cyberpunk",  dot: "#f0e040" },
 ];
 
 export default function Navbar() {

@@ -131,6 +131,25 @@
   --radius: 4px;
 }
 
+// ─── iOS 26 Liquid Glass Theme ────────────────────────────────
+[data-theme="ios26"] {
+  --primary:       #007aff;
+  --primary-dark:  #0062cc;
+  --primary-light: #409cff;
+  --secondary:     #34aadc;
+  --accent:        #ff9f0a;
+  --green:         #30d158;
+  --bg:            #f2f2f7;
+  --bg-card:       rgba(255, 255, 255, 0.55);
+  --bg-card-hover: rgba(255, 255, 255, 0.75);
+  --text:          #1c1c1e;
+  --text-muted:    #8e8e93;
+  --border:        rgba(0, 0, 0, 0.08);
+  --gradient:      linear-gradient(135deg, #007aff, #34aadc);
+  --shadow:        0 4px 30px rgba(0, 0, 0, 0.10);
+  --radius:        22px;
+}
+
 // ─── SCSS aliases (so existing code keeps working) ────────────────
 $primary: var(--primary);
 $primary-dark: var(--primary-dark);

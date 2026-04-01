@@ -1,5 +1,259 @@
 // ─── Theme Extras (non-CSS-variable overrides) ───────────────────
 
+// ── iOS 26 Liquid Glass Theme ────────────────────────────────────
+[data-theme="ios26"] {
+  // Light system background — just like iOS
+  body {
+    background: #f2f2f7;
+    color: #1c1c1e;
+  }
+
+  ::-webkit-scrollbar-thumb { background: #007aff; }
+  ::-webkit-scrollbar-track  { background: #e5e5ea; }
+
+  // Navbar — ultra thin material
+  .navbar {
+    background: rgba(242, 242, 247, 0.72);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .navbar.scrolled {
+    background: rgba(242, 242, 247, 0.85) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06) !important;
+  }
+
+  .nav-logo, .nav-link { color: #1c1c1e; }
+  .nav-link:hover, .nav-link.active {
+    color: #007aff !important;
+    background: rgba(0, 122, 255, 0.08) !important;
+  }
+  .nav-link.active::after { background: #007aff !important; }
+
+  // Buttons — iOS style pill buttons
+  .btn-primary {
+    background: #007aff !important;
+    border-radius: 50px !important;
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.35) !important;
+    &:hover { background: #0062cc !important; }
+  }
+  .btn-outline {
+    border-color: rgba(0, 122, 255, 0.4) !important;
+    color: #007aff !important;
+    border-radius: 50px !important;
+    &:hover { background: rgba(0, 122, 255, 0.08) !important; }
+  }
+  .btn-ghost {
+    color: #007aff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    border-radius: 50px !important;
+    &:hover { background: rgba(0, 122, 255, 0.06) !important; }
+  }
+
+  // Hero — light section
+  .hero {
+    background: linear-gradient(180deg, #f2f2f7 0%, #e8e8f0 100%);
+  }
+  .orb1 {
+    background: radial-gradient(circle, rgba(0,122,255,0.25), rgba(52,170,220,0.15));
+    opacity: 1;
+    filter: blur(80px);
+    width: 500px;
+    height: 500px;
+  }
+  .orb2 {
+    background: radial-gradient(circle, rgba(255,159,10,0.2), rgba(48,209,88,0.12));
+    opacity: 1;
+    filter: blur(80px);
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(0,122,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,122,255,0.04) 1px, transparent 1px) !important;
+  }
+  .hero-badge {
+    background: rgba(48, 209, 88, 0.12) !important;
+    border-color: rgba(48, 209, 88, 0.35) !important;
+    color: #1c7a3a !important;
+  }
+  .badge-dot { background: #30d158 !important; }
+  .hero-heading, .section-title { color: #1c1c1e !important; -webkit-text-fill-color: initial !important; }
+  .hero-name {
+    background: linear-gradient(135deg, #007aff, #34aadc) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  .role-text { color: #007aff !important; }
+  .cursor { color: #007aff !important; }
+  .hero-desc { color: #3a3a3c !important; }
+  .hero-desc strong { color: #007aff !important; }
+  .hero-stats {
+    background: rgba(255,255,255,0.55) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-color: rgba(0,0,0,0.06) !important;
+  }
+  .stat-num {
+    background: linear-gradient(135deg, #007aff, #34aadc) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  .stat-label, .stat-divider { color: #8e8e93 !important; background: rgba(0,0,0,0.1); }
+  .social-link {
+    border-color: rgba(0,0,0,0.1) !important;
+    color: #3a3a3c !important;
+    &:hover { color: #007aff !important; border-color: rgba(0,122,255,0.4) !important; background: rgba(0,122,255,0.06) !important; }
+  }
+
+  // All cards — liquid glass
+  .exp-card, .edu-card, .cert-card, .skill-card,
+  .project-card, .contact-form-col, .summary-card,
+  .tech-cloud, .contact-item, .availability-card, .about-exp-badge {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+    color: #1c1c1e !important;
+  }
+  .exp-card:hover, .edu-card:hover, .skill-card:hover,
+  .project-card:hover, .contact-item:hover {
+    background: rgba(255,255,255,0.75) !important;
+    border-color: rgba(0,122,255,0.3) !important;
+    box-shadow: 0 8px 32px rgba(0,122,255,0.15), inset 0 1px 0 rgba(255,255,255,1) !important;
+    transform: translateY(-4px);
+  }
+
+  // Typography inside cards
+  .exp-role, .exp-company, .edu-degree, .skill-card-title,
+  .project-title, .contact-intro-title, .col-heading,
+  .tech-cloud-title, .cert-name, .edu-field { color: #1c1c1e !important; }
+  .exp-desc, .exp-achievements li, .project-desc,
+  .contact-intro-text, .edu-school, .edu-meta,
+  .cert-meta, .edu-grade { color: #3a3a3c !important; }
+  .exp-company, .edu-field, .skill-pct { color: #007aff !important; }
+  .skill-name, .tech-name { color: #1c1c1e !important; }
+
+  // Skill bars — iOS blue
+  .skill-bar-bg { background: rgba(0,0,0,0.06) !important; }
+  .skill-bar-fill { background: linear-gradient(90deg, #007aff, #34aadc) !important; }
+
+  // Tech badges
+  .tech-badge {
+    background: rgba(255,255,255,0.55) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  // Filter tabs
+  .filter-tab {
+    background: rgba(255,255,255,0.55) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    color: #3a3a3c !important;
+    backdrop-filter: blur(10px);
+    border-radius: 50px !important;
+  }
+  .filter-tab.active {
+    background: #007aff !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    box-shadow: 0 2px 10px rgba(0,122,255,0.35) !important;
+  }
+  .filter-tab:hover { color: #007aff !important; background: rgba(0,122,255,0.08) !important; }
+
+  // Highlights
+  .highlight-chip {
+    background: rgba(0,122,255,0.08) !important;
+    border-color: rgba(0,122,255,0.2) !important;
+    color: #007aff !important;
+  }
+  .tag {
+    background: rgba(0,122,255,0.08) !important;
+    border-color: rgba(0,122,255,0.15) !important;
+    color: #007aff !important;
+  }
+
+  // Availability
+  .availability-card { background: rgba(48,209,88,0.1) !important; border-color: rgba(48,209,88,0.25) !important; }
+  .avail-dot { background: #30d158 !important; box-shadow: 0 0 0 3px rgba(48,209,88,0.2) !important; }
+  .avail-title { color: #1c7a3a !important; }
+  .avail-sub { color: #3a3a3c !important; }
+
+  // Current badge
+  .current-badge { color: #1c7a3a !important; background: rgba(48,209,88,0.12) !important; border-color: rgba(48,209,88,0.3) !important; }
+
+  // Section separator backgrounds
+  .about-exp-badge { background: linear-gradient(135deg, #007aff, #34aadc) !important; }
+  .about-cert-badge { background: rgba(255,159,10,0.12) !important; border-color: rgba(255,159,10,0.35) !important; color: #b36200 !important; }
+  .avatar-ring { background: linear-gradient(135deg, #007aff, #34aadc) !important; }
+
+  // Form inputs
+  .form-group label { color: #8e8e93 !important; }
+  .form-group input, .form-group textarea {
+    background: rgba(255,255,255,0.7) !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    color: #1c1c1e !important;
+    border-radius: 12px !important;
+    &::placeholder { color: rgba(0,0,0,0.3) !important; }
+    &:focus { border-color: #007aff !important; box-shadow: 0 0 0 3px rgba(0,122,255,0.15) !important; }
+  }
+  .form-success { color: #1c7a3a !important; }
+
+  // Section backgrounds — frosted light
+  .skills-section, .experience-section,
+  .projects-section, .contact-section { background: transparent; }
+
+  .footer {
+    background: rgba(242,242,247,0.85) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0,0,0,0.08) !important;
+  }
+  .footer-logo, .footer-nav ul li button, .footer-contact-list li { color: #1c1c1e !important; }
+  .footer-tagline, .footer-nav-title { color: #8e8e93 !important; }
+  .footer-nav ul li button:hover { color: #007aff !important; }
+  .footer-bottom p { color: #8e8e93 !important; }
+
+  .section-subtitle { color: #8e8e93 !important; }
+  .about-para { color: #3a3a3c !important; }
+  .about-para strong { color: #007aff !important; }
+  .about-heading { color: #1c1c1e !important; }
+  .about-location { color: #8e8e93 !important; }
+  .info-label { color: #8e8e93 !important; }
+  .info-value { color: #1c1c1e !important; }
+  .info-value.available { color: #1c7a3a !important; }
+
+  // Theme toggle button in light mode
+  .theme-toggle { border-color: rgba(0,0,0,0.12) !important; color: #3a3a3c !important; }
+  .theme-dropdown { background: rgba(255,255,255,0.85) !important; border-color: rgba(0,0,0,0.08) !important; backdrop-filter: blur(20px); }
+  .theme-option { color: #3a3a3c !important; &:hover { background: rgba(0,0,0,0.04) !important; } &.active { background: rgba(0,122,255,0.1) !important; color: #007aff !important; } }
+
+  .contact-item-label { color: #8e8e93 !important; }
+  .contact-item-value { color: #1c1c1e !important; }
+  .contact-item-value.link { color: #007aff !important; }
+
+  // Summary num
+  .summary-num {
+    background: linear-gradient(135deg, #007aff, #34aadc) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  .summary-card { background: rgba(255,255,255,0.55) !important; }
+  .summary-stat { background: rgba(0,122,255,0.06) !important; border-color: rgba(0,122,255,0.12) !important; }
+  .summary-label { color: #8e8e93 !important; }
+
+  .exp-meta span, .exp-meta { color: #8e8e93 !important; }
+  .exp-achievements li { color: #3a3a3c !important; &::before { color: #007aff !important; } }
+  .exp-tech .tag { background: rgba(0,122,255,0.08) !important; color: #007aff !important; }
+  .proj-link { border-color: rgba(0,0,0,0.1) !important; color: #8e8e93 !important; &:hover { color: #007aff !important; border-color: rgba(0,122,255,0.4) !important; } }
+}
+
 // ── SaaS Theme ───────────────────────────────────────────────────
 [data-theme="saas"] {
   .orb1,
