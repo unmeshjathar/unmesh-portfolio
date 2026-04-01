@@ -38,7 +38,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com"
+                href="mailto:unmesh1jathar@gmail.com"
                 className="social-link"
                 aria-label="Email"
               >

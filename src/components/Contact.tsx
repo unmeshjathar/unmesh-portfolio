@@ -13,7 +13,7 @@ const CONTACT_ITEMS = [
     icon: "📧",
     label: "Email",
     value: "unmesh1jathar@gmail.com",
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
+    href: "mailto:unmesh1jathar@gmail.com",
   },
   {
     icon: "",
@@ -63,7 +63,7 @@ export default function Contact() {
     );
     const subject = encodeURIComponent(form.subject);
     window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com&su=${subject}&body=${body}`,
+      `mailto:unmesh1jathar@gmail.com?subject=${subject}&body=${body}`,
       "_blank",
     );
     setStatus("success");
