@@ -40,7 +40,7 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const sectionRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -59,21 +59,34 @@ export default function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
-    );
-    const subject = encodeURIComponent(form.subject);
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-    const url = isMobile
-      ? `mailto:unmesh1jathar@gmail.com?subject=${subject}&body=${body}`
-      : `https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com&su=${subject}&body=${body}`;
-    window.open(url, "_blank");
-    setStatus("success");
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus("idle"), 5000);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "f1c3d4d3-edf6-42b0-bcaf-bad8445d86b64",
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -193,7 +206,12 @@ export default function Contact() {
 
               {status === "success" && (
                 <div className="form-success">
-                  ✅ Gmail opened! Review and hit Send to reach me.
+                  ✅ Message sent! I'll get back to you within 24 hours.
+                </div>
+              )}
+              {status === "error" && (
+                <div className="form-error">
+                  ❌ Something went wrong. Please try again.
                 </div>
               )}
 
