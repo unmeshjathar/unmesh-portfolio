@@ -34,7 +34,9 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
       <div className="nav-container">
         <button className="nav-logo" onClick={() => scrollTo("Home")}>
-          <img src={`${import.meta.env.BASE_URL}img/logo.png`} alt="Unmesh Jathar" className="nav-logo-img" />
+          <span className="bracket">&lt;</span>
+          <span>UJ</span>
+          <span className="bracket">/&gt;</span>
         </button>
 
         <ul className={`nav-links${menuOpen ? " open" : ""}`}>
