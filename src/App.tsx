@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -15,22 +16,25 @@ function App() {
   useEffect(() => {
     const move = (e: MouseEvent) => {
       if (glowRef.current) {
-        glowRef.current.style.left = e.clientX + "px";
-        glowRef.current.style.top = e.clientY + "px";
+        glowRef.current.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
       }
       if (rocketRef.current) {
-        rocketRef.current.style.left = e.clientX + "px";
-        rocketRef.current.style.top = e.clientY + "px";
+        rocketRef.current.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 28}px) rotate(-45deg)`;
       }
     };
-    window.addEventListener("mousemove", move);
+    window.addEventListener("mousemove", move, { passive: true });
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
   return (
     <>
-      <div className="cursor-glow" ref={glowRef} />
-      <div className="cursor-rocket" ref={rocketRef}>🚀</div>
+      {createPortal(
+        <>
+          <div className="cursor-glow" ref={glowRef} />
+          <div className="cursor-rocket" ref={rocketRef}>🚀</div>
+        </>,
+        document.body,
+      )}
       <Navbar />
       <main>
         <Hero />
