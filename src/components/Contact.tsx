@@ -40,7 +40,9 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const sectionRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -65,9 +67,12 @@ export default function Contact() {
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          access_key: "f1c3d4d3-edf6-42b0-bcaf-bad8445d86b64",
+          access_key: "f1c3d4d3-edf6-42b0-bcaf-bad8445d86b6",
           name: form.name,
           email: form.email,
           subject: form.subject,
