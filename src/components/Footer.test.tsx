@@ -10,7 +10,9 @@ beforeEach(() => {
 describe("Footer", () => {
   it("renders UJ logo", () => {
     render(<Footer />);
-    expect(screen.getByText("Unmesh Jathar", { exact: false })).toBeInTheDocument();
+    expect(
+      screen.getByText("Unmesh Jathar", { exact: false }),
+    ).toBeInTheDocument();
   });
 
   it("renders tagline", () => {

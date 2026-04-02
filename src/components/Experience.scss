@@ -55,7 +55,13 @@
     background: $primary;
     border-color: $primary;
     box-shadow: 0 0 0 4px rgba($primary, 0.2);
+    animation: dotPulse 2.5s ease-in-out infinite;
   }
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba($primary, 0.2); }
+  50%       { box-shadow: 0 0 0 7px rgba($primary, 0.08), 0 0 16px rgba($primary, 0.3); }
 }
 
 .tl-connector {
@@ -267,6 +273,14 @@
   background: rgba($primary, 0.06);
   border-radius: 10px;
   border: 1px solid rgba($primary, 0.15);
+  transition: $transition;
+
+  &:hover {
+    background: rgba($primary, 0.1);
+    border-color: rgba($primary, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($primary, 0.15);
+  }
 }
 
 .summary-num {

@@ -37,4 +37,3 @@ describe("Projects", () => {
     expect(cards.length).toBeGreaterThan(0);
   });
 });
-

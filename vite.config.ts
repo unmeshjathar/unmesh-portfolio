@@ -10,14 +10,14 @@ export default defineConfig({
       // Expose each section as a federated module
       // so other host apps can consume them independently
       exposes: {
-        "./Hero":       "./src/components/Hero",
-        "./About":      "./src/components/About",
-        "./Skills":     "./src/components/Skills",
-        "./Projects":   "./src/components/Projects",
+        "./Hero": "./src/components/Hero",
+        "./About": "./src/components/About",
+        "./Skills": "./src/components/Skills",
+        "./Projects": "./src/components/Projects",
         "./Experience": "./src/components/Experience",
-        "./Contact":    "./src/components/Contact",
-        "./Footer":     "./src/components/Footer",
-        "./Navbar":     "./src/components/Navbar",
+        "./Contact": "./src/components/Contact",
+        "./Footer": "./src/components/Footer",
+        "./Navbar": "./src/components/Navbar",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.2.0" },

@@ -56,8 +56,9 @@
   transition: $transition;
   &:hover {
     background: $bg-card-hover;
-    border-color: rgba($primary, 0.3);
+    border-color: rgba($primary, 0.4);
     transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba($primary, 0.1), -3px 0 0 rgba($primary, 0.5);
   }
 }
 
@@ -130,6 +131,12 @@
   border: 1px solid $border;
   border-radius: $radius;
   padding: 34px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus-within {
+    border-color: rgba($primary, 0.3);
+    box-shadow: 0 0 40px rgba($primary, 0.06);
+  }
 }
 
 .contact-form {
@@ -175,8 +182,8 @@
     }
     &:focus {
       border-color: $primary;
-      background: rgba($primary, 0.04);
-      box-shadow: 0 0 0 3px rgba($primary, 0.12);
+      background: rgba($primary, 0.06);
+      box-shadow: 0 0 0 3px rgba($primary, 0.18), 0 0 20px rgba($primary, 0.1);
     }
   }
 }

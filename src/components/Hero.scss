@@ -24,43 +24,54 @@
 }
 
 .orb1 {
-  width: 500px;
-  height: 500px;
-  background: $primary;
-  top: -100px;
-  right: -100px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #a78bfa, #7c3aed);
+  top: -150px;
+  right: -150px;
+  animation-duration: 10s;
 }
 
 .orb2 {
-  width: 350px;
-  height: 350px;
-  background: $secondary;
-  bottom: -50px;
-  left: -50px;
-  animation-delay: -4s;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #38bdf8, #0ea5e9);
+  bottom: -80px;
+  left: -80px;
+  animation-delay: -5s;
+  animation-duration: 12s;
+}
+
+// Extra ambient orb
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251,146,60,0.15), transparent);
+  filter: blur(60px);
+  bottom: 20%;
+  right: 20%;
+  animation: float 14s ease-in-out infinite;
+  animation-delay: -7s;
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba($primary, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($primary, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    linear-gradient(rgba($primary, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($primary, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 75%);
 }
 
 @keyframes float {
   0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(20px, -20px) scale(1.05);
-  }
-  66% {
-    transform: translate(-15px, 15px) scale(0.97);
-  }
+  100% { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(25px, -25px) scale(1.06); }
+  66%  { transform: translate(-18px, 18px) scale(0.96); }
 }
 
 .hero-content {
@@ -69,33 +80,30 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
-  animation: fadeUp 0.8s ease both;
+  gap: 24px;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background: rgba($green, 0.12);
-  border: 1px solid rgba($green, 0.3);
+  padding: 7px 16px;
+  background: rgba($green, 0.1);
+  border: 1px solid rgba($green, 0.25);
   border-radius: 100px;
   color: $green;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba($green, 0.1), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .badge-dot {
