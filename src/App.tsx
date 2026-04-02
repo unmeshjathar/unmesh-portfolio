@@ -10,12 +10,17 @@ import Footer from "./components/Footer";
 
 function App() {
   const glowRef = useRef<HTMLDivElement>(null);
+  const rocketRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const move = (e: MouseEvent) => {
       if (glowRef.current) {
         glowRef.current.style.left = e.clientX + "px";
         glowRef.current.style.top = e.clientY + "px";
+      }
+      if (rocketRef.current) {
+        rocketRef.current.style.left = e.clientX + "px";
+        rocketRef.current.style.top = e.clientY + "px";
       }
     };
     window.addEventListener("mousemove", move);
@@ -25,6 +30,7 @@ function App() {
   return (
     <>
       <div className="cursor-glow" ref={glowRef} />
+      <div className="cursor-rocket" ref={rocketRef}>🚀</div>
       <Navbar />
       <main>
         <Hero />
