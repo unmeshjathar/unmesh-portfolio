@@ -28,21 +28,20 @@
 }
 
 .nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
   cursor: pointer;
+  font-family: "Fira Code", monospace;
   background: none;
   border: none;
-  padding: 0;
+  color: $text;
   transition: $transition;
+  .bracket {
+    color: $primary;
+  }
   &:hover {
     transform: scale(1.05);
   }
-}
-
-.nav-logo-img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  display: block;
 }
 
 .nav-links {

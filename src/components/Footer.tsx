@@ -38,12 +38,12 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:unmesh1jathar@gmail.com"
+                href="mailto:contact@unmeshjathar.com"
                 onClick={(e) => {
                   if (!/Mobi|Android/i.test(navigator.userAgent)) {
                     e.preventDefault();
                     window.open(
-                      "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
+                      "https://mail.google.com/mail/?view=cm&fs=1&to=contact@unmeshjathar.com",
                       "_blank",
                     );
                   }
@@ -87,7 +87,7 @@ export default function Footer() {
           <div className="footer-contact-col">
             <h4 className="footer-nav-title">Contact</h4>
             <ul className="footer-contact-list">
-              <li>📧 unmesh1jathar@gmail.com</li>
+              <li>📧 contact@unmeshjathar.com</li>
               <li> Pune, Maharashtra – 411001</li>
               <li>💼 Cognizant (Associate)</li>
             </ul>

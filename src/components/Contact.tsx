@@ -12,12 +12,12 @@ const CONTACT_ITEMS = [
   {
     icon: "📧",
     label: "Email",
-    value: "unmesh1jathar@gmail.com",
+    value: "contact@unmeshjathar.com",
     href: /Mobi|Android/i.test(
       typeof navigator !== "undefined" ? navigator.userAgent : "",
     )
-      ? "mailto:unmesh1jathar@gmail.com"
-      : "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
+      ? "mailto:contact@unmeshjathar.com"
+      : "https://mail.google.com/mail/?view=cm&fs=1&to=contact@unmeshjathar.com",
   },
   {
     icon: "",

@@ -113,14 +113,14 @@ export default function Hero() {
             Get In Touch
           </button>
           <a
-            href="mailto:unmesh1jathar@gmail.com"
+            href="mailto:contact@unmeshjathar.com"
             target="_blank"
             rel="noreferrer"
             onClick={(e) => {
               if (!/Mobi|Android/i.test(navigator.userAgent)) {
                 e.preventDefault();
                 window.open(
-                  "https://mail.google.com/mail/?view=cm&fs=1&to=unmesh1jathar@gmail.com",
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=contact@unmeshjathar.com",
                   "_blank",
                 );
               }
